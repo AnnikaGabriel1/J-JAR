@@ -1,0 +1,334 @@
+/* Collapsing Margins*/
+/* Collapsing Margins vermeiden */ 
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, blockquote, input, label {
+    margin: 0; 
+}
+
+/*Border Box*/
+*,*::before,*::after {box-sizing: border-box;} 
+
+
+/*Main Layout______________________________________*/
+.sequencer{
+    background-image: linear-gradient(135deg,#f7faf7,#e0e3df);
+    box-shadow: inset -4px -4px 8px 4px #c7c9c7, 4px 4px 4px 2px #acaeac;
+    padding: 40px 56px 80px 56px;
+    border-radius: 32px;
+    width: 100%;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.data-screen {
+    background-image: linear-gradient(135deg,#dcdedc,rgb(198, 199, 198));
+    width: 480px;
+    height: 200px;
+    border-radius: 16px;
+    border: solid 1px rgb(180, 182, 180);
+    box-shadow: inset 1px 1px 4px 1px rgb(180, 182, 180);
+    padding: 16px 16px;
+}
+
+.logo-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tools{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: none;
+    margin-top: 32px;
+}
+
+.sound-name{
+    width: 232px;
+    min-width: 160px;
+}
+
+.sound-rec{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 232px;
+    min-width: 160px;
+}
+
+/*Screen________________________________________________________*/
+
+
+
+/*Title*/
+.sample-title {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+  font-weight: 500;
+    color: #393939;
+    margin-bottom: 16px;
+}
+
+/*Range Slider_______________________________________________________________*/
+/*Range Slider Container*/
+.range-slider-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 232px;
+    min-width: 160px;
+    gap: 16px;
+}
+
+/*Range Slider*/
+.range-slider {
+    width: 100%;
+    appearance: none;
+    height: 16px;
+    background-color: #e2ebe9;
+    border-radius: 8px;
+    box-shadow: inset 1px 1px 1px 1px #b8bfbd;
+    border: solid 1px #c9d0ce;
+}
+
+/*Handle - Webkit Browsers (Chrome, Safari, etc.)*/
+::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background-color: #f7faf7;
+    box-shadow: inset -1px -1px 1px 1px rgba(141, 140, 140, 0.5), 1px 1px 1px 1px rgba(94, 94, 94, 0.5);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+/*Hover-Effekt für den Handle - Webkit*/
+::-webkit-slider-thumb:hover {
+    box-shadow: inset -1px -1px 1px 1px rgba(141, 140, 140, 0.5), 1px 1px 1px 1px rgba(94, 94, 94, 0.5), inset 0px 0px 16px rgba(0, 0, 0, 0.1);
+}
+
+/*Handle - Mozilla Firefox*/
+.range-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background-color: #f7faf7;
+    box-shadow: inset -1px -1px 1px 1px rgba(141, 140, 140, 0.5), 1px 1px 1px 1px rgba(94, 94, 94, 0.5);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+/*Hover-Effekt für den Handle - Mozilla*/
+.range-slider::-moz-range-thumb:hover {
+    box-shadow: inset -1px -1px 1px 1px rgba(141, 140, 140, 0.5), 1px 1px 1px 1px rgba(94, 94, 94, 0.5), 0 0 16px rgba(0, 0, 0, 0.1);
+}
+
+/*Buttons______________________________________________________________________*/
+button{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    width: 112px;
+    padding: 16px 24px;
+    background-color: #f7faf7;
+    border-radius: 8px;
+    border: none;
+    box-shadow: inset -1px -1px 1px 1px rgba(141, 140, 140, 0.5), 1px 1px 1px 1px rgba(94, 94, 94, 0.5);
+    position: relative;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); /* Transparenter Overlay-Effekt */
+    border-radius: 8px; /* Muss identisch mit dem Button-Radius sein */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Übergang für den Hover-Effekt */
+}
+
+button:hover::before {
+    opacity: 1; /* Sichtbarer Overlay beim Hover */
+}
+
+button:active{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn-row{
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+/*Pads___________________________________________________________*/
+.sound-row{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    margin: 16px 0px;
+    gap: 24px;
+}
+
+.step-row{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 24px;
+}
+
+.pad-row{
+    width: 100%;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:24px;
+}
+
+.single-pad {
+    width: 100%;
+    max-width: 80px;
+    aspect-ratio : 1 / 1;
+    border-radius: 8px;
+    border: none;
+    padding: 0px;
+    position: relative; /* Wichtig für das Pseudo-Element */
+    box-shadow: inset -1px -1px 2px 1px rgba(141, 140, 140, 0.5), 2px 2px 2px 1px rgba(94, 94, 94, 0.5);
+}
+
+button .single-pad{
+    padding: 0px;
+}
+
+.whisk{
+    background-color: #FFF7D6;
+}
+.single-pad.whisk.active{
+    background-image: radial-gradient(circle at center, #FFF7D6 0, #FFE785 50%);
+    background-color: #FFE785;
+}
+
+.snake{
+    background-color: #F3FFD6;
+}
+.single-pad.snake.active{
+    background-image: radial-gradient(circle at center, #F3FFD6 0, #DAFF85 50%);
+    background-color: #DAFF85;
+}
+
+.steeldrum{
+    background-color: #D9FFDD;
+}
+.single-pad.steeldrum.active{
+    background-image: radial-gradient(circle at center, #D9FFDD 0, #85FF91 50%);
+    background-color: #85FF91;
+}
+
+.bells-electric{
+    background-color: #D4FFF6;
+}
+.single-pad.bells-electric.active{
+    background-image: radial-gradient(circle at center, #D4FFF6 0, #85FFE7 50%);
+    background-color: #85FFE7;
+}
+
+.call{
+    background-color: #D4F9FF;
+}
+.single-pad.call.active{
+    background-image: radial-gradient(circle at center, #D4F9FF 0, #84EEFF 50%);
+    background-color: #84EEFF;
+}
+
+.glass{
+    background-color: #EDDBFF;
+}
+.single-pad.glass.active{
+    background-image: radial-gradient(circle at center, #EDDBFF 0, #C68CFF 50%);
+    background-color: #C68CFF;
+}
+
+.ghost{
+    background-color: #FFDDFF;
+}
+.single-pad.ghost.active{
+    background-image: radial-gradient(circle at center, #FFDDFF 0, #FFA4FF 50%);
+    background-color: #FFA4FF;
+}
+
+.bass-bounce{
+    background-color: #FFD1D1;
+}
+.single-pad.bass-bounce.active{
+    background-image: radial-gradient(circle at center, #FFD1D1 0, #FF8585 50%);
+    background-color: #FF8585;
+}
+
+.elephant-bass{
+    background-color: #FFE1CC;
+}
+.single-pad.elephant-bass.active{
+    background-image: radial-gradient(circle at center, #FFE1CC 0, #FFB885 50%);
+    background-color: #FFB885;
+}
+
+.recorded{
+    background-color: #e2ebe9;
+}
+.single-pad.recorded.active{
+    background-image: radial-gradient(circle at center, #e2ebe9 0, #c9d0ce 50%);
+    background-color: #c9d0ce;
+}
+
+/* Lights_____________________________________________________________________*/
+.lights{
+    width: 100%;
+    max-width: 80px;
+    height: 16px;
+    background-color: #e2ebe9;
+    border-radius: 8px;
+    box-shadow: inset 1px 1px 1px 1px #b8bfbd;
+    border: solid 1px #c9d0ce;
+}
+
+.lights.active{
+    background-color: #ffffff;
+}
+
+.light-row{
+    width: 100%;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:24px;
+}
+
+.rec-light{
+    width: 16px;
+    height: 16px;
+    background-color: #e2ebe9;
+    border-radius: 8px;
+    box-shadow: inset 1px 1px 1px 1px #b8bfbd;
+    border: solid 1px #c9d0ce;
+}
+
+.rec-light.active{
+    background-color: #ff0000;
+}
+
+
+/*Images and Svgs_____________________________________________________________*/
+/*Logo*/
+.logo{
+    height: 80px;
+    width: 80px;
+}
+

@@ -1,0 +1,147 @@
+/*Import Styles____________________________________________________________*/
+@import url("fonts.css");
+@import url("item-styles.css");
+
+
+/* Collapsing Margins*/
+/* Collapsing Margins vermeiden */ 
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, blockquote, input {
+    margin: 0; 
+}
+
+html{
+    height: 100vh;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+body{
+    background-image: linear-gradient(135deg, #f7faf7,#e0e3df);
+    margin: 0;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+footer h5{
+    color: rgb(140, 140, 140);
+}
+
+/*Overlay___________________________________________________*/
+#db-area{
+	display: flex;
+	flex-direction: column;
+    justify-content: start;
+	font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0;
+	text-align:left;
+	color: #e0e3df;
+	
+}
+
+.area-aktiv{
+	width: 480px;
+    height: 200px;
+	position:absolute;
+	width: 480px;
+    height: 200px;
+	z-index:100;
+	top:80px;
+	bottom:0;
+	right:96px;
+	padding: 48px 16px 16px 16px;
+	gap: 8px;
+}
+
+.button-flex{
+	display: flex;
+	flex-direction: row;
+}
+
+.area-passiv{
+	height:0px;
+	width:0px;
+}
+
+#db-area #innerwrap{
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+#db-area button{
+	display:flex;
+	cursor:pointer;
+	background-color: transparent;
+	color: #393939;
+	font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+	margin: 0;
+	padding: 0;
+	box-shadow: none;
+}
+
+#db-area button::before {
+	background-color: transparent;
+}
+
+#db-area button:hover {
+	color: #C68CFF;
+}
+
+#db-area .item{
+    display: flex;
+	justify-content:space-between;
+	align-items: left;
+	background-color: rgb(221, 222, 221);
+	border-radius: 8px;
+	margin-bottom: 8px;
+	padding: 4px;
+}
+
+#db-area .loader{
+	display:inline-block;
+	}
+#db-area .delete{
+	width:1rem;
+	display:inline-block;
+	padding:0;
+	}
+#db-area .titel{
+	display:inline-block;
+	width: 200px;
+	color:#393939;
+}
+		
+#db-area input{
+	width:100%;
+}
+
+#db-area h5, #save-area h5{
+	color: #393939;
+	text-align:left;
+}
+
+#db-area p{
+	color: #393939;
+	text-align:left;
+}
+
+.runstop_aktiv{
+	background:rgba(0,255,0,0.9);
+}
+	
+.runstop_passiv{
+	background:rgba(255,255,255,0.9);
+}
+	
